@@ -1,9 +1,10 @@
 <?php 
-echo "Soy la ruta";
+$json = array(
+ "detalle"=>"no encontrado"
+);
 
 
-
-
+echo json_encode($json,true);
 
 
 
