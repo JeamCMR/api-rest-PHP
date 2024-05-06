@@ -29,7 +29,15 @@ class CursosController
     }
     public function update($id){
         $json = array(
-            "detalle" => "El curso actualizado con el id: ".$id ." Fue actualizado"
+            "detalle" => "El curso con el id: ".$id ." Fue actualizado"
+        );
+        echo json_encode($json, true);
+        return;
+    }
+
+    public function delete($id){
+        $json = array(
+            "detalle" => "El curso con el id: ".$id ." Fue eliminado"
         );
         echo json_encode($json, true);
         return;

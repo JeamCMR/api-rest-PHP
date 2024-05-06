@@ -54,12 +54,18 @@ if (count(array_filter($arrayRoute)) == 2) { //count devuelve el tamaño de la m
                 $curso -> show(array_filter($arrayRoute)[4]);
             }
 
-            /**Realiza un peticion get para traer devuelta el curso PUT */
+            /**Realiza un peticion Actualiza el curso PUT */
             if(isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == "PUT")
             {
                 $editarCurso = new CursosController();
                 $editarCurso -> update(array_filter($arrayRoute)[4]);
             }
+             /**Realiza un peticion que elimina el curso DELETE */
+             if(isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == "DELETE")
+             {
+                 $borrarCurso = new CursosController();
+                 $borrarCurso -> delete(array_filter($arrayRoute)[4]);
+             }
         }
     }
 }
