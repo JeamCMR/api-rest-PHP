@@ -26,10 +26,12 @@ if (count(array_filter($arrayRoute)) == 2) { //count devuelve el tamaño de la m
         }
         if(array_filter($arrayRoute)[3] == "registro"){
              //Cuando se hace  peticion a la api muestra de registro, muestra este resultado
-            $json = array(
-                "detalle" => "Estas en la vista registro");
-            echo json_encode($json, true);
-            return;
+             if(isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == "GET")
+             {
+                $clientes = new ClientesController();
+                $clientes -> create();
+             }
+          
         }
     }
 }
