@@ -34,10 +34,15 @@ if (count(array_filter($arrayRoute)) == 2) { //count devuelve el tamaño de la m
 
         if(array_filter($arrayRoute)[3] == "registro"){
             //Cuando se hace  peticion a la api muestra de registro, muestra este resultado
-            if(isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == "GET")
+            if(isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == "POST")
             {
+                $datos = array(
+                    "nombre" => $_POST["Nombre"],
+                    "apeliido" => $_POST["Apellido"],
+                    "email" => $_POST["Email"]);    
+                    //echo "<pre>"; print_r($datos); echo"<pre>";
                 $clientes = new ClientesController();
-                $clientes -> create();
+                $clientes -> create($datos);
             }
              
           

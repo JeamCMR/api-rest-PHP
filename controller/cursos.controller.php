@@ -5,9 +5,10 @@ class CursosController
 
     public function index()
     {
+        $cursos = ModelCursos::index("cursos");
         //Cuando se hace  peticion a la api muestra de cursos, muestra este resultado
         $json = array(
-            "detalle" => "Estas en la vista  curso"
+            "detalle" => $cursos,
         );
         echo json_encode($json, true);
         return;
