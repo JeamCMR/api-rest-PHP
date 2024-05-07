@@ -38,7 +38,7 @@ if (count(array_filter($arrayRoute)) == 2) { //count devuelve el tamaño de la m
             {
                 $datos = array(
                     "nombre" => $_POST["Nombre"],
-                    "apeliido" => $_POST["Apellido"],
+                    "apellido" => $_POST["Apellido"],
                     "email" => $_POST["Email"]);    
                     //echo "<pre>"; print_r($datos); echo"<pre>";
                 $clientes = new ClientesController();
